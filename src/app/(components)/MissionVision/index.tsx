@@ -8,10 +8,10 @@ const MissionVision = () => (
         {/* Text */}
         <div className="flex-1 text-center md:text-left order-2 md:order-1">
           <p className="text-gray-700 text-lg mb-4">
-            <span className="font-semibold text-orange-700">Our Mission:</span> To rescue, protect, and nurture cows, spreading awareness about their importance in our culture and environment. We provide a safe, loving home for every cow and promote the values of Gauseva in society.
+            <span className="font-semibold text-orange-700">हमारा मिशन (Our Mission):</span> शिव मंदिर गौशाला का मिशन है बेसहारा, बीमार और वृद्ध गायों को सुरक्षा, पोषण और सम्मानजनक जीवन प्रदान करना। हम गौसेवा के माध्यम से धार्मिक, सामाजिक और पारिस्थितिक संतुलन को बनाए रखते हुए समाज में करुणा, समर्पण और सेवा भाव को प्रोत्साहित करना चाहते हैं।
           </p>
           <p className="text-gray-600 mb-4">
-            <span className="font-semibold text-orange-700">Our Vision:</span> A world where every cow is respected, cared for, and cherished. We envision a future where Gauseva is a way of life, and our gaushala stands as a beacon of compassion, sustainability, and tradition.
+            <span className="font-semibold text-orange-700">हमारा विज़न (Our Vision):</span> हमारा लक्ष्य एक ऐसी आदर्श गौशाला स्थापित करना है जहाँ प्रत्येक गाय को संरक्षण, स्नेह और गरिमा के साथ जीवन जीने का अवसर मिले। हम गौ आधारित प्राकृतिक संसाधनों, जैविक खेती और आयुर्वेदिक उपयोगों को बढ़ावा देते हुए भारत में गौसंवर्धन का एक सशक्त और प्रेरणादायक मॉडल बनाना चाहते हैं।
           </p>
         </div>
         {/* Image */}

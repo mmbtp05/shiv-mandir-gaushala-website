@@ -38,7 +38,7 @@ const HeroCarousel = () => {
   const goToSlide = (idx: number) => setCurrent(idx);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-[calc(100vh-200px)] mt-[100px] w-full overflow-hidden">
       {/* Slides */}
       {slides.map((slide, idx) => (
         <div

@@ -85,9 +85,7 @@ const ContactSection = () => {
                   </svg>
                   <div>
                     <h4 className="font-medium text-orange-700">Address</h4>
-                    <p className="text-gray-600">5-8-354, room no:- 805, 8th floor,
-                      Raghava Ratna Towers, Chirag Ali Ln, Abids,
-                      Hyderabad, Telangana, 500001</p>
+                    <p className="text-gray-600">D No 19-2-29/A9, Shah Ali Banda New Rd, Model Town Colony, Shamsher Gunj, Nawab Saheb Kunta, Hyderabad, Telangana 500053</p>
                   </div>
                 </div>
 
@@ -108,7 +106,7 @@ const ContactSection = () => {
                   </svg>
                   <div>
                     <h4 className="font-medium text-orange-700">Email</h4>
-                    <p className="text-gray-600">partanitoursandtravels@gmail.com</p>
+                    <p className="text-gray-600">info@shivmandirgaushala.com</p>
                   </div>
                 </div>
               </div>
@@ -117,7 +115,7 @@ const ContactSection = () => {
             {/* Map */}
             <div className="h-[300px] bg-orange-100 rounded-xl overflow-hidden shadow-md">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.235030151266!2d78.46918817499173!3d17.39354877599382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9762d8fd6cdd%3A0xe3fa453e12381a80!2sRaghava%20Ratna%20Towers!5e0!3m2!1sen!2sin!4v1708519428669!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.235030151266!2d78.4652742!3d17.3435036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb97faf1d0f7d7:0x9f8f669a3730db9!2sShiv+Mandir+Gowshala!5e0!3m2!1sen!2sin!4v1708519428669!5m2!1sen!2sin"
                 width="100%"
                 height="450"
                 loading="lazy"
