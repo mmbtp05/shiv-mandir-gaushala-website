@@ -95,8 +95,8 @@ const ContactSection = () => {
                   </svg>
                   <div>
                     <h4 className="font-medium text-orange-700">Phone</h4>
-                    <p className="text-gray-600">+91 93931 19009</p>
-                    <p className="text-gray-600">+91 40232 09009</p>
+                    <p className="text-gray-600">+91 98493 79735</p>
+                    <p className="text-gray-600">+91 91003 53375</p>
                   </div>
                 </div>
 
@@ -106,7 +106,7 @@ const ContactSection = () => {
                   </svg>
                   <div>
                     <h4 className="font-medium text-orange-700">Email</h4>
-                    <p className="text-gray-600">info@shivmandirgaushala.com</p>
+                    <p className="text-gray-600">shivmandirgaushala@gmail.com</p>
                   </div>
                 </div>
               </div>

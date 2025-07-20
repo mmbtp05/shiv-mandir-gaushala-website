@@ -2,10 +2,12 @@
 
 import React from 'react';
 import { scrollToSection } from '@/app/(utils)/scroll';
+import Image from 'next/image';
+import qrCode from '../../../../public/assets/donationQr.jpeg';
 
 const Footer = () => {
 
-  const handleNavClick = (e: any, id: any) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     scrollToSection(id);
   };
@@ -14,36 +16,24 @@ const Footer = () => {
     { name: 'Facebook', href: 'https://www.facebook.com/shivmandirgowshala/', icon: 'facebook' },
     { name: 'Instagram', href: 'https://www.instagram.com/shiv_mandir_gowshala', icon: 'instagram' },
     { name: 'WhatsApp', href: 'https://whatsapp.com/channel/0029VavdHsMIt5s4Uv82DL2J', icon: 'whatsapp' },
-    { name: 'YouTube', href: 'https://www.youtube.com/feed/subscriptions/UCqpCJPdTHtPiN2_p5YHfSJg', icon: 'youtube' }
+    { name: 'YouTube', href: 'https://www.youtube.com/@shivmandirgowshala', icon: 'youtube' }
   ];
 
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer */}
       <div className="w-4/5 lg:w-3/5 mx-auto py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-orange-500 mb-4 flex items-center gap-2">
-              <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="18" cy="18" r="18" fill="#ea580c" />
-                <text x="50%" y="55%" textAnchor="middle" fill="white" fontSize="14" fontFamily="Arial" dy=".3em">🐄</text>
-              </svg>
-              Shiv Mandir <span className="text-white">Gaushala</span>
-            </h3>
-            <p className="text-sm">
-              Dedicated to the care, protection, and service of cows. Join us in our journey of compassion, tradition, and sustainability.
+          <div>
+            <h4 className="text-white font-semibold mb-4">Shiv Mandir Gaushala</h4>
+            <p className="text-gray-300 text-sm mb-4">
+              Dedicated to the care and protection of cows, serving as a sanctuary for these sacred animals.
             </p>
-            <div className="flex space-x-4 pt-4">
+            <div className="flex space-x-4">
               {socialLinks.map((social) => (
-                <a 
-                  key={social.name}
-                  href={social.href} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-orange-400 transition-colors" 
-                  aria-label={social.name}
-                >
+                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
+                  <span className="sr-only">{social.name}</span>
                   {social.icon === 'facebook' && (
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
@@ -68,33 +58,44 @@ const Footer = () => {
               ))}
             </div>
           </div>
+
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {[
-                { title: 'Home', id: 'home' },
-                { title: 'Products', id: 'products' },
-                { title: 'Donate', id: 'donate' },
-                { title: 'Gallery', id: 'gallery' },
-                { title: 'Contact Us', id: 'contact' }
-              ].map((item) => (
-                <li key={item.id}>
-                  <a href={`#${item.id}`} onClick={(e) => handleNavClick(e, item.id)} className="hover:text-orange-400 transition-colors">
-                    {item.title}
-                  </a>
-                </li>
-              ))}
+            <ul className="space-y-2 text-sm">
+              <li><a href="#home" className="text-gray-300 hover:text-orange-400 transition-colors duration-200">Home</a></li>
+              <li><a href="#products" className="text-gray-300 hover:text-orange-400 transition-colors duration-200">Products</a></li>
+              <li><a href="#donate" className="text-gray-300 hover:text-orange-400 transition-colors duration-200">Donate</a></li>
+              <li><a href="#gallery" className="text-gray-300 hover:text-orange-400 transition-colors duration-200">Gallery</a></li>
+              <li><a href="#contact" className="text-gray-300 hover:text-orange-400 transition-colors duration-200">Contact</a></li>
             </ul>
           </div>
+
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li><span className="text-orange-400 font-semibold">Address:</span> D No 19-2-29/A9, Shah Ali Banda New Rd, Model Town Colony, Shamsher Gunj, Nawab Saheb Kunta, Hyderabad, Telangana 500053</li>
-              <li><span className="text-orange-400 font-semibold">Phone:</span> +91 93931 19009, +91 40232 09009</li>
-              <li><span className="text-orange-400 font-semibold">Email:</span> info@shivmandirgaushala.com</li>
+              <li><span className="text-orange-400 font-semibold">Phone:</span> +91 98493 79735, +91 91003 53375</li>
+              <li><span className="text-orange-400 font-semibold">Email:</span> shivmandirgaushala@gmail.com</li>
             </ul>
+          </div>
+
+          {/* Donate QR Code */}
+          <div className='flex flex-col items-center'>
+            <h4 className="text-white text-center font-semibold mb-4">Donate</h4>
+            <div>
+              <Image 
+                src={qrCode} 
+                alt="Donation QR Code" 
+                className="w-48 h-48 object-contain rounded-lg"
+                width={192}
+                height={192}
+              />
+            </div>
+            <p className="text-gray-300 text-center text-sm mt-3">
+              Scan this QR code to make a donation and support our gaushala.
+            </p>
           </div>
         </div>
       </div>

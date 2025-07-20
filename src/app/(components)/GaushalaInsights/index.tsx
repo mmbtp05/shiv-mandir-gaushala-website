@@ -5,35 +5,35 @@ import React from 'react';
 const stats = [
   {
     label: 'Cows Sheltered',
-    value: '500+',
+    value: '2200+',
     icon: (
       <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 17v-2a4 4 0 014-4h8a4 4 0 014 4v2" /><circle cx="12" cy="7" r="4" /></svg>
     ),
   },
   {
     label: 'Volunteers',
-    value: '120+',
+    value: '100+',
     icon: (
       <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75" /></svg>
     ),
   },
   {
     label: 'Products',
-    value: '30+',
+    value: '10+',
     icon: (
       <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M20 21V7a2 2 0 00-2-2H6a2 2 0 00-2 2v14" /><path d="M16 3v4M8 3v4" /></svg>
     ),
   },
   {
     label: 'Acres of Land',
-    value: '15+',
+    value: '7+',
     icon: (
       <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2" /><circle cx="12" cy="7" r="4" /></svg>
     ),
   },
   {
     label: 'Adoptions',
-    value: '200+',
+    value: '100+',
     icon: (
       <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 21C12 21 7 16.5 7 12.5C7 9.46243 9.46243 7 12.5 7C15.5376 7 18 9.46243 18 12.5C18 16.5 12 21 12 21Z" /></svg>
     ),
