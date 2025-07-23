@@ -2,25 +2,32 @@
 
 import { scrollToSection } from '@/app/(utils)/scroll';
 import { useState, useEffect } from 'react';
+import image1 from '../../../../public/assets/1.jpeg';
+import image2 from '../../../../public/assets/2.jpeg';
+import image3 from '../../../../public/assets/3.jpeg';
+import image4 from '../../../../public/assets/4.jpeg';
+import image5 from '../../../../public/assets/5.jpeg';
+import image6 from '../../../../public/assets/6.jpeg';
+import image7 from '../../../../public/assets/7.jpeg';
 
 const slides = [
   {
-    image: 'https://saveindiancows.org/wp-content/uploads/2022/02/IMG_4152-1024x683-1.jpg',
-    heading: 'Purity by Cow\'s Sight',
-    subheading: 'Experience the divine presence and blessings of our cows at Shree Gaushala.',
+    image: image1.src,
+    heading: 'Welcome to Shiv Mandir Gaushala',
+    subheading: 'A sanctuary for the care and protection of cows.',
     cta: 'Donate Now',
   },
   {
-    image: 'https://www.worldsankirtan.org/images/14.jpg',
-    heading: 'Nourish with Gauseva',
-    subheading: 'Support the care, feeding, and well-being of our beloved cows.',
+    image: image4.src,
+    heading: 'Cow Care Takers',
+    subheading: 'Meet our dedicated team caring for our cows every day.',
     cta: 'Support Gauseva',
   },
   {
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbr11sKI9TRid8o2zxLg_PmEpsnHlki-q04w&s',
-    heading: 'Pure Products, Pure Heart',
-    subheading: 'Discover our range of natural, cow-based products for your family.',
-    cta: 'View Products',
+    image: image6.src,
+    heading: 'Gaushala Cows',
+    subheading: 'Experience the peace and divinity of our sacred cows.',
+    cta: 'View Gallery',
   },
 ];
 

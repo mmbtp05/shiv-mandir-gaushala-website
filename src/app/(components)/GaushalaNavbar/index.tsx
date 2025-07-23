@@ -182,7 +182,7 @@ const Navbar = () => {
                                     <circle cx="18" cy="18" r="18" fill="#ea580c" />
                                     <text x="50%" y="55%" textAnchor="middle" fill="white" fontSize="18" fontFamily="Arial" dy=".3em">🐄</text>
                                 </svg>
-                                <span className="text-2xl font-bold text-orange-600">Shiv Mandir <span className="text-white">Gaushala</span></span>
+                                <span className="text-2xl font-bold text-orange-600">Om Shiv Mandir <span className="text-white">Gaushala</span></span>
                             </div>
 
                             {/* Desktop Navigation */}
@@ -228,71 +228,71 @@ const Navbar = () => {
                 </nav>
             </div>
 
-            {/* Mobile menu drawer with higher z-index */}
-            <div className={`fixed inset-0 z-[1001] transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-                }`}>
-                {/* Overlay */}
-                <div
-                    className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-                    onClick={closeMenu}
-                    aria-hidden="true"
-                />
+                {/* Mobile menu drawer with higher z-index */}
+                <div className={`fixed inset-0 z-[1001] transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    }`}>
+                    {/* Overlay */}
+                    <div
+                        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                        onClick={closeMenu}
+                        aria-hidden="true"
+                    />
 
-                {/* Drawer */}
-                <div
-                    className={`absolute right-0 top-0 h-full w-full max-w-xs bg-orange-700 shadow-xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
-                        }`}
-                >
-                    {/* Drawer content */}
-                    <div className="h-full flex flex-col">
-                        {/* Header */}
-                        <div className="px-4 pt-5 pb-4">
-                            <div className="flex items-center justify-between">
-                                <div className="text-xl font-bold text-orange-600 flex items-center gap-2">
-                                    <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="18" cy="18" r="18" fill="#ea580c" />
-                                        <text x="50%" y="55%" textAnchor="middle" fill="white" fontSize="14" fontFamily="Arial" dy=".3em">🐄</text>
-                                    </svg>
+                    {/* Drawer */}
+                    <div
+                        className={`absolute right-0 top-0 h-full w-full max-w-xs bg-orange-700 shadow-xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
+                            }`}
+                    >
+                        {/* Drawer content */}
+                        <div className="h-full flex flex-col">
+                            {/* Header */}
+                            <div className="px-4 pt-5 pb-4">
+                                <div className="flex items-center justify-between">
+                                    <div className="text-xl font-bold text-orange-600 flex items-center gap-2">
+                                        <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="18" cy="18" r="18" fill="#ea580c" />
+                                            <text x="50%" y="55%" textAnchor="middle" fill="white" fontSize="14" fontFamily="Arial" dy=".3em">🐄</text>
+                                        </svg>
                                     Shiv Mandir <span className="text-white ml-1">Gaushala</span>
-                                </div>
-                                <button
-                                    type="button"
-                                    className="p-2 text-white hover:text-emerald-400"
-                                    onClick={closeMenu}
-                                >
-                                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Navigation links */}
-                        <div className="flex-1 px-4 py-6">
-                            <div className="flex flex-col space-y-4">
-                                {navLinks.map((item) => (
-                                    <a
-                                        key={item.id}
-                                        href={`#${item.id}`}
-                                        onClick={(e) => handleNavClick(e, item.id)}
-                                        className="text-white hover:text-orange-300 text-lg font-medium"
+                                    </div>
+                                    <button
+                                        type="button"
+                                        className="p-2 text-white hover:text-emerald-400"
+                                        onClick={closeMenu}
                                     >
-                                        {item.title}
-                                    </a>
-                                ))}
+                                        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Social links */}
-                        <div className="px-4 py-6 border-t border-gray-700">
-                            <div className="flex justify-center space-x-6">
+                            {/* Navigation links */}
+                            <div className="flex-1 px-4 py-6">
+                                <div className="flex flex-col space-y-4">
+                                    {navLinks.map((item) => (
+                                        <a
+                                            key={item.id}
+                                            href={`#${item.id}`}
+                                            onClick={(e) => handleNavClick(e, item.id)}
+                                            className="text-white hover:text-orange-300 text-lg font-medium"
+                                        >
+                                            {item.title}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Social links */}
+                            <div className="px-4 py-6 border-t border-gray-700">
+                                <div className="flex justify-center space-x-6">
                                 {socialLinks.map((social) => (
                                     <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-emerald-400">
                                         <span className="sr-only">{social.name}</span>
                                         {social.icon === 'facebook' && (
-                                            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                                            </svg>
+                                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                                        </svg>
                                         )}
                                         {social.icon === 'instagram' && (
                                             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -305,9 +305,9 @@ const Navbar = () => {
                                             </svg>
                                         )}
                                         {social.icon === 'youtube' && (
-                                            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                            </svg>
+                                        </svg>
                                         )}
                                     </a>
                                 ))}

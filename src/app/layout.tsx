@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import GaushalaNavbar from '@/app/(components)/GaushalaNavbar';
 import GaushalaFooter from '@/app/(components)/GaushalaFooter';
+import DonateCarousel from '@/app/(components)/DonateCarousel';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

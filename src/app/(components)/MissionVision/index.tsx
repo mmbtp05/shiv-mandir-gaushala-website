@@ -1,5 +1,7 @@
 "use client";
 
+import image3 from '../../../../public/assets/3.jpeg';
+
 const MissionVision = () => (
   <section className="w-full bg-white py-20" id="mission-vision">
     <div className="w-4/5 lg:w-3/5 mx-auto">
@@ -17,8 +19,8 @@ const MissionVision = () => (
         {/* Image */}
         <div className="flex-1 mb-8 md:mb-0 order-1 md:order-2">
           <img
-            src="https://images.unsplash.com/photo-1464983953574-0892a716854b"
-            alt="Cow Mission"
+            src={image3.src}
+            alt="Mission and Vision Shiv Mandir Gaushala"
             className="rounded-2xl shadow-lg w-full object-cover max-h-96 border-4 border-orange-200"
           />
         </div>

@@ -31,20 +31,13 @@ const stats = [
       <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 21v-2a4 4 0 014-4h10a4 4 0 014 4v2" /><circle cx="12" cy="7" r="4" /></svg>
     ),
   },
-  {
-    label: 'Adoptions',
-    value: '100+',
-    icon: (
-      <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 21C12 21 7 16.5 7 12.5C7 9.46243 9.46243 7 12.5 7C15.5376 7 18 9.46243 18 12.5C18 16.5 12 21 12 21Z" /></svg>
-    ),
-  },
 ];
 
 const GaushalaInsights = () => (
   <section className="w-full bg-orange-50 py-16" id="insights">
     <div className="w-4/5 lg:w-3/5 mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-orange-700">Gaushala Insights</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {stats.map((stat, idx) => (
           <div key={idx} className="bg-white rounded-2xl shadow-lg flex flex-col items-center p-8 border-t-4 border-orange-600 hover:scale-105 transition-transform duration-300">
             <div className="mb-4">{stat.icon}</div>

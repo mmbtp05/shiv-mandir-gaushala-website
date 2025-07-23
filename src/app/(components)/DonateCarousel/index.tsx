@@ -1,38 +1,126 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from 'react';
-import React from 'react';
+import Image from 'next/image';
+import img1 from '../../../../public/assets/1.jpeg';
+import img2 from '../../../../public/assets/2.jpeg';
+import img3 from '../../../../public/assets/3.jpeg';
+import img4 from '../../../../public/assets/4.jpeg';
+import img5 from '../../../../public/assets/5.jpeg';
+import img6 from '../../../../public/assets/6.jpeg';
+import img7 from '../../../../public/assets/7.jpeg';
+import qrCode from '../../../../public/assets/donationQr.jpeg';
 
 const donationOptions = [
+  // Shamshergunj
   {
-    title: 'Adopt a Cow',
-    description: 'Provide lifelong care and love to a cow in need. Your support covers food, shelter, and medical care.',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
-    cta: 'Adopt Now',
+    title: 'आजीवन सदस्यता (Lifetime Membership)',
+    description: 'गौशाला के आजीवन सदस्य बनें और गौसेवा के इस पुण्य कार्य में स्थायी योगदान दें।',
+    amount: '₹1,11,111',
+    image: img1,
   },
   {
-    title: 'Feed a Cow',
-    description: 'Sponsor daily nutritious meals for our cows. Help us keep them healthy and happy.',
-    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308',
-    cta: 'Feed Now',
+    title: 'एक दिन का चारा (One Day Fodder)',
+    description: 'पूरे गौशाला के लिए एक दिन का चारा उपलब्ध कराएं और सभी गायों को तृप्त करें।',
+    amount: '₹21,000',
+    image: img2,
   },
   {
-    title: 'Medical Care',
-    description: 'Support the medical needs of our cows, including vaccinations, treatments, and emergency care.',
-    image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b',
-    cta: 'Support Care',
+    title: 'एक दिन की खिचड़ी सेवा',
+    description: 'गौमाताओं के लिए पौष्टिक खिचड़ी सेवा का आयोजन करें।',
+    amount: '₹14,000',
+    image: img3,
   },
   {
-    title: 'Shelter & Comfort',
-    description: 'Contribute to building and maintaining safe, comfortable shelters for our cows.',
-    image: 'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd',
-    cta: 'Donate Shelter',
+    title: 'एक दिन की बूँदी सेवा',
+    description: 'गौमाताओं के लिए बूँदी प्रसाद की सेवा करें।',
+    amount: '₹11,000',
+    image: img4,
   },
   {
-    title: 'General Donation',
-    description: 'Make a general donation to support all aspects of our gaushala and Gauseva mission.',
-    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
-    cta: 'Donate',
+    title: 'एक दिन की हरी घास सेवा',
+    description: 'गौमाताओं के लिए ताजा हरी घास की सेवा करें।',
+    amount: '₹7,100',
+    image: img5,
+  },
+  {
+    title: 'एक दिन की सूखी घास सेवा',
+    description: 'गौमाताओं के लिए सूखी घास की सेवा करें।',
+    amount: '₹5,100',
+    image: img6,
+  },
+  {
+    title: 'एक दिन की खल सेवा',
+    description: 'गौमाताओं के लिए खल (पशु आहार) की सेवा करें।',
+    amount: '₹2,100',
+    image: img7,
+  },
+  {
+    title: 'एक दिन की गुड़ सेवा',
+    description: 'गौमाताओं के लिए गुड़ की सेवा करें।',
+    amount: '₹1,100',
+    image: img1,
+  },
+  {
+    title: 'एक दिन की बासी रोटी सेवा',
+    description: 'गौमाताओं के लिए बासी रोटी की सेवा करें।',
+    amount: '₹500',
+    image: img2,
+  },
+  // Palmakul
+  {
+    title: 'आजीवन सदस्यता (Lifetime Membership) - Palmakul',
+    description: 'पल्माकुल गौशाला के आजीवन सदस्य बनें और गौसेवा के इस पुण्य कार्य में स्थायी योगदान दें।',
+    amount: '₹1,11,111',
+    image: img3,
+  },
+  {
+    title: 'एक दिन का चारा (One Day Fodder) - Palmakul',
+    description: 'पल्माकुल गौशाला के लिए एक दिन का चारा उपलब्ध कराएं।',
+    amount: '₹21,000',
+    image: img4,
+  },
+  {
+    title: 'एक दिन की खिचड़ी सेवा - Palmakul',
+    description: 'पल्माकुल गौशाला में पौष्टिक खिचड़ी सेवा का आयोजन करें।',
+    amount: '₹14,000',
+    image: img5,
+  },
+  {
+    title: 'एक दिन की बूँदी सेवा - Palmakul',
+    description: 'पल्माकुल गौशाला में बूँदी प्रसाद की सेवा करें।',
+    amount: '₹11,000',
+    image: img6,
+  },
+  {
+    title: 'एक दिन की हरी घास सेवा - Palmakul',
+    description: 'पल्माकुल गौशाला के लिए ताजा हरी घास की सेवा करें।',
+    amount: '₹7,100',
+    image: img7,
+  },
+  {
+    title: 'एक दिन की सूखी घास सेवा - Palmakul',
+    description: 'पल्माकुल गौशाला के लिए सूखी घास की सेवा करें।',
+    amount: '₹5,100',
+    image: img1,
+  },
+  {
+    title: 'एक दिन की खल सेवा - Palmakul',
+    description: 'पल्माकुल गौशाला के लिए खल (पशु आहार) की सेवा करें।',
+    amount: '₹2,100',
+    image: img2,
+  },
+  {
+    title: 'एक दिन की गुड़ सेवा - Palmakul',
+    description: 'पल्माकुल गौशाला के लिए गुड़ की सेवा करें।',
+    amount: '₹1,100',
+    image: img3,
+  },
+  {
+    title: 'एक दिन की बासी रोटी सेवा - Palmakul',
+    description: 'पल्माकुल गौशाला के लिए बासी रोटी की सेवा करें।',
+    amount: '₹500',
+    image: img4,
   },
 ];
 
@@ -58,7 +146,6 @@ const DonateCarousel = () => {
   // Responsive visible count
   useEffect(() => {
     if (!isClient) return;
-    
     const handleResize = () => setVisibleCount(getVisibleCount());
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -110,15 +197,18 @@ const DonateCarousel = () => {
                   style={{ width: `${100 / visibleCount}%` }}
                 >
                   <div className="flex flex-col items-center bg-orange-50 rounded-2xl shadow-lg p-8 h-full">
-                    <img
+                    <Image
                       src={option.image}
                       alt={option.title}
                       className="rounded-xl shadow w-full object-cover max-h-48 border-4 border-orange-200 mb-4"
+                      width={300}
+                      height={180}
                     />
                     <h3 className="text-xl md:text-2xl font-bold text-orange-700 mb-2 text-center">{option.title}</h3>
+                    <div className="text-orange-600 font-bold text-lg mb-2">{option.amount}</div>
                     <p className="text-gray-700 mb-6 text-center">{option.description}</p>
                     <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full shadow transition-colors duration-200">
-                      {option.cta}
+                      Donate
                     </button>
                   </div>
                 </div>
@@ -134,6 +224,33 @@ const DonateCarousel = () => {
           >
             <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
           </button>
+        </div>
+        {/* Tax/CSR/FCRA Info and Bank Details */}
+        <div className="mt-12 flex flex-col md:flex-row gap-8 items-center justify-center">
+          <div className="flex-1 bg-orange-50 border-l-4 border-orange-600 rounded-xl p-6 shadow mb-4 md:mb-0">
+            <div className="text-xl md:text-2xl font-bold text-orange-700 mb-2">Do Gau Seva &amp; Save 50% Tax</div>
+            <div className="text-gray-700 font-medium mb-1">under 80G of Income Tax Act</div>
+            <div className="text-lg font-bold text-orange-700 mt-4">We accept Donations under CSR</div>
+            <div className="text-gray-700 text-sm">Donations to OM Shiv Mandir Gowshala are exempted under Section 80G of Income Tax Act.</div>
+          </div>
+          <div className="flex-1 flex flex-col items-center bg-white rounded-lg p-6 shadow-lg border-2 border-orange-200">
+            <Image 
+              src={qrCode} 
+              alt="Donation QR Code" 
+              className="w-40 h-40 object-contain rounded-lg mb-2"
+              width={160}
+              height={160}
+            />
+            <div className="text-gray-800 text-sm text-center mb-2">
+              <div className="font-bold text-orange-700">Bank Details</div>
+              <div>Account Name: <span className="font-semibold">OM SHIV MANDIR GOWSHALA (TRUST)</span></div>
+              <div>Bank: <span className="font-semibold">MAHAVEER CO-OPERATIVE URBAN BANK LTD.</span></div>
+              <div>Branch: <span className="font-semibold">Shamshergunj</span></div>
+              <div>Account No.: <span className="font-semibold">003103000000072</span></div>
+              <div>IFSC: <span className="font-semibold">HDFCCMCUBL</span></div>
+            </div>
+            <p className="text-gray-600 text-xs text-center">Scan the QR or use the above details to donate and support our gaushala.</p>
+          </div>
         </div>
       </div>
     </section>

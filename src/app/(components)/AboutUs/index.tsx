@@ -1,13 +1,15 @@
 "use client";
 
+import image2 from '../../../../public/assets/2.jpeg';
+
 const AboutUs = () => (
   <section className="w-full bg-white py-20" id="about">
     <div className="w-4/5 lg:w-3/5 mx-auto flex flex-col md:flex-row items-center gap-10">
       {/* Image */}
       <div className="flex-1 mb-8 md:mb-0">
         <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-          alt="Cow at Gaushala"
+          src={image2.src}
+          alt="About Shiv Mandir Gaushala"
           className="rounded-2xl shadow-lg w-full object-cover max-h-96 border-4 border-orange-200"
         />
       </div>

@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Shiv Mandir Gaushala</h4>
+            <h4 className="text-white font-semibold mb-4">Om Shiv Mandir Gaushala</h4>
             <p className="text-gray-300 text-sm mb-4">
               Dedicated to the care and protection of cows, serving as a sanctuary for these sacred animals.
             </p>
@@ -81,21 +81,17 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Donate QR Code */}
+          {/* Donate QR Code and Bank Details */}
           <div className='flex flex-col items-center'>
             <h4 className="text-white text-center font-semibold mb-4">Donate</h4>
-            <div>
               <Image 
                 src={qrCode} 
                 alt="Donation QR Code" 
-                className="w-48 h-48 object-contain rounded-lg"
-                width={192}
-                height={192}
+                className="w-40 h-40 object-contain rounded-lg mb-2"
+                width={160}
+                height={160}
               />
-            </div>
-            <p className="text-gray-300 text-center text-sm mt-3">
-              Scan this QR code to make a donation and support our gaushala.
-            </p>
+              <p className="text-gray-600 text-xs text-center">Scan the QR code to donate and support our gaushala.</p>
           </div>
         </div>
       </div>
@@ -104,7 +100,7 @@ const Footer = () => {
         <div className="w-4/5 lg:w-3/5 mx-auto py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm">
-              © {new Date().getFullYear()} Shiv Mandir Gaushala. All rights reserved.
+              © {new Date().getFullYear()} Om Shiv Mandir Gaushala. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="hover:text-orange-400 transition-colors">Privacy Policy</a>
