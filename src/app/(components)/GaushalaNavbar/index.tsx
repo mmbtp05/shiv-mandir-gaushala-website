@@ -2,11 +2,12 @@
 
 import { scrollToSection } from '@/app/(utils)/scroll';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [showVideoModal, setShowVideoModal] = useState(true);
+    const router = useRouter();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,25 +41,13 @@ const Navbar = () => {
         };
     }, [isOpen]);
 
-    // Lock scroll when video modal is open
-    useEffect(() => {
-        if (showVideoModal) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-
-        return () => {
-            document.body.style.overflow = '';
-        };
-    }, [showVideoModal]);
 
     const toggleMenu = () => setIsOpen(!isOpen);
     const closeMenu = () => setIsOpen(false);
-    const closeVideoModal = () => setShowVideoModal(false);
 
     const navLinks = [
-        { title: 'Home', id: 'home' },
+        { title: 'Home', href: '/' },
+        { title: 'About Us', href: '/about' },
         { title: 'Products', id: 'products' },
         { title: 'Donate', id: 'donate' },
         { title: 'Gallery', id: 'gallery' },
@@ -67,57 +56,30 @@ const Navbar = () => {
 
     const socialLinks = [
         { name: 'Facebook', href: 'https://www.facebook.com/shivmandirgowshala/', icon: 'facebook' },
-        { name: 'Instagram', href: 'https://www.instagram.com/shiv_mandir_gowshala', icon: 'instagram' },
+        { name: 'Instagram', href: 'https://www.instagram.com/shiv_mandir_gaushala', icon: 'instagram' },
         { name: 'WhatsApp', href: 'https://whatsapp.com/channel/0029VavdHsMIt5s4Uv82DL2J', icon: 'whatsapp' },
         { name: 'YouTube', href: 'https://www.youtube.com/@shivmandirgowshala', icon: 'youtube' }
     ];
 
-    const handleNavClick = (e: any, id: any) => {
+    const handleNavClick = async (e: React.MouseEvent<HTMLAnchorElement>, idOrHref: string | undefined) => {
         e.preventDefault();
-        scrollToSection(id);
-        setIsOpen(false); 
+        setIsOpen(false);
+        if (idOrHref && idOrHref.startsWith && idOrHref.startsWith('/')) {
+            router.push(idOrHref);
+        } else if (typeof idOrHref === 'string' && idOrHref) {
+            if (window.location.pathname !== '/') {
+                router.push('/');
+                setTimeout(() => scrollToSection(idOrHref), 100);
+            } else {
+                scrollToSection(idOrHref);
+            }
+        }
     };
 
     return (
         <>
             {/* YouTube Video Modal */}
-            {showVideoModal && (
-                <div className="fixed inset-0 z-[9999] bg-black bg-opacity-90 flex items-center justify-center">
-                    <div className="relative w-full max-w-4xl mx-4">
-                        {/* Close Button */}
-                        <button
-                            onClick={closeVideoModal}
-                            className="absolute -top-12 right-0 text-white hover:text-orange-400 transition-colors duration-200 z-10"
-                        >
-                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                        
-                        {/* Video Container */}
-                        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>        
-                            <iframe
-                                className="absolute top-0 left-0 w-full h-full rounded-lg"
-                                src="https://www.youtube.com/embed/QpApIi3SRRk?autoplay=1&mute=1&rel=0&showinfo=0&controls=1&loop=1&playlist=QpApIi3SRRk"
-                                title="Shiv Mandir Gaushala"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; mute;"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                        
-                        {/* Skip Button */}
-                        <div className="text-center mt-4">
-                            <button
-                                onClick={closeVideoModal}
-                                className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-lg transition-colors duration-200"
-                            >
-                                Skip Video & Visit Website
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+            {/* The video modal rendering is removed from here */}
 
             {/* Fixed navbar with higher z-index - moves as one component but only by strip height */}
             <div className={`fixed top-0 left-0 right-0 z-[1000] transition-transform duration-300 ${isScrolled ? '-translate-y-10' : 'translate-y-0'}`}>
@@ -190,9 +152,9 @@ const Navbar = () => {
                                 <div className="ml-10 flex items-center space-x-8">
                                     {navLinks.map((item) => (
                                         <a
-                                            key={item.id}
-                                            href={`#${item.id}`}
-                                            onClick={(e) => handleNavClick(e, item.id)}
+                                            key={item.title}
+                                            href={item.href ? item.href : `#${item.id}`}
+                                            onClick={(e) => handleNavClick(e, item.href ? item.href : item.id)}
                                             className="text-white hover:text-orange-300 transition-colors duration-200"
                                         >
                                             {item.title}
@@ -272,9 +234,9 @@ const Navbar = () => {
                                 <div className="flex flex-col space-y-4">
                                     {navLinks.map((item) => (
                                         <a
-                                            key={item.id}
-                                            href={`#${item.id}`}
-                                            onClick={(e) => handleNavClick(e, item.id)}
+                                            key={item.title}
+                                            href={item.href ? item.href : `#${item.id}`}
+                                            onClick={(e) => handleNavClick(e, item.href ? item.href : item.id)}
                                             className="text-white hover:text-orange-300 text-lg font-medium"
                                         >
                                             {item.title}

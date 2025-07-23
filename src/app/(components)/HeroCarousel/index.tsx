@@ -13,7 +13,7 @@ import image7 from '../../../../public/assets/7.jpeg';
 const slides = [
   {
     image: image1.src,
-    heading: 'Welcome to Shiv Mandir Gaushala',
+    heading: 'Welcome to Om Shiv Mandir Gaushala',
     subheading: 'A sanctuary for the care and protection of cows.',
     cta: 'Donate Now',
   },
@@ -66,7 +66,7 @@ const HeroCarousel = () => {
               {slide.subheading}
             </p>
             <button
-              onClick={() => scrollToSection(idx === 2 ? 'products' : 'donate')}
+              onClick={() => scrollToSection(idx === 2 ? 'gallery' : 'donate')}
               className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full transition-colors duration-200 text-lg font-semibold shadow-lg"
             >
               {slide.cta}

@@ -12,115 +12,65 @@ import img7 from '../../../../public/assets/7.jpeg';
 import qrCode from '../../../../public/assets/donationQr.jpeg';
 
 const donationOptions = [
-  // Shamshergunj
   {
-    title: 'आजीवन सदस्यता (Lifetime Membership)',
+    title: 'आजीवन सदस्यता',
     description: 'गौशाला के आजीवन सदस्य बनें और गौसेवा के इस पुण्य कार्य में स्थायी योगदान दें।',
     amount: '₹1,11,111',
     image: img1,
   },
   {
-    title: 'एक दिन का चारा (One Day Fodder)',
+    title: 'एक दिन का चारा',
     description: 'पूरे गौशाला के लिए एक दिन का चारा उपलब्ध कराएं और सभी गायों को तृप्त करें।',
     amount: '₹21,000',
     image: img2,
   },
   {
-    title: 'एक दिन की खिचड़ी सेवा',
+    title: 'एक दिन की कुट्टी',
     description: 'गौमाताओं के लिए पौष्टिक खिचड़ी सेवा का आयोजन करें।',
     amount: '₹14,000',
     image: img3,
   },
   {
-    title: 'एक दिन की बूँदी सेवा',
-    description: 'गौमाताओं के लिए बूँदी प्रसाद की सेवा करें।',
-    amount: '₹11,000',
-    image: img4,
-  },
-  {
-    title: 'एक दिन की हरी घास सेवा',
+    title: 'एक दिवसीय हरी घास',
     description: 'गौमाताओं के लिए ताजा हरी घास की सेवा करें।',
-    amount: '₹7,100',
-    image: img5,
-  },
-  {
-    title: 'एक दिन की सूखी घास सेवा',
-    description: 'गौमाताओं के लिए सूखी घास की सेवा करें।',
-    amount: '₹5,100',
-    image: img6,
-  },
-  {
-    title: 'एक दिन की खल सेवा',
-    description: 'गौमाताओं के लिए खल (पशु आहार) की सेवा करें।',
-    amount: '₹2,100',
-    image: img7,
-  },
-  {
-    title: 'एक दिन की गुड़ सेवा',
-    description: 'गौमाताओं के लिए गुड़ की सेवा करें।',
-    amount: '₹1,100',
-    image: img1,
-  },
-  {
-    title: 'एक दिन की बासी रोटी सेवा',
-    description: 'गौमाताओं के लिए बासी रोटी की सेवा करें।',
-    amount: '₹500',
-    image: img2,
-  },
-  // Palmakul
-  {
-    title: 'आजीवन सदस्यता (Lifetime Membership) - Palmakul',
-    description: 'पल्माकुल गौशाला के आजीवन सदस्य बनें और गौसेवा के इस पुण्य कार्य में स्थायी योगदान दें।',
-    amount: '₹1,11,111',
-    image: img3,
-  },
-  {
-    title: 'एक दिन का चारा (One Day Fodder) - Palmakul',
-    description: 'पल्माकुल गौशाला के लिए एक दिन का चारा उपलब्ध कराएं।',
-    amount: '₹21,000',
-    image: img4,
-  },
-  {
-    title: 'एक दिन की खिचड़ी सेवा - Palmakul',
-    description: 'पल्माकुल गौशाला में पौष्टिक खिचड़ी सेवा का आयोजन करें।',
-    amount: '₹14,000',
-    image: img5,
-  },
-  {
-    title: 'एक दिन की बूँदी सेवा - Palmakul',
-    description: 'पल्माकुल गौशाला में बूँदी प्रसाद की सेवा करें।',
     amount: '₹11,000',
+    image: img4,
+  },
+  {
+    title: 'एक दिवसीय चुन्नी भैँसाँ',
+    description: 'गौमाताओं के लिए चुनी भूसी की सेवा करें।',
+    amount: '₹3,100',
+    image: img5,
+  },
+  {
+    title: 'एक दिवसीय गुड़',
+    description: 'गौमाताओं के लिए गुड़ की सेवा करें।',
+    amount: '₹2,100',
     image: img6,
   },
   {
-    title: 'एक दिन की हरी घास सेवा - Palmakul',
-    description: 'पल्माकुल गौशाला के लिए ताजा हरी घास की सेवा करें।',
+    title: 'एक दिन की लाप्सी सेवा',
+    description: 'गौमाताओं के लिए ताजगी भरी लस्सी की सेवा करें।',
     amount: '₹7,100',
     image: img7,
   },
   {
-    title: 'एक दिन की सूखी घास सेवा - Palmakul',
-    description: 'पल्माकुल गौशाला के लिए सूखी घास की सेवा करें।',
-    amount: '₹5,100',
+    title: 'प्रति दिन की चिकित्सा सेवा',
+    description: 'गौमाताओं के लिए चिकित्सा सेवा का सहयोग करें।',
+    amount: '₹2,100',
     image: img1,
   },
   {
-    title: 'एक दिन की खल सेवा - Palmakul',
-    description: 'पल्माकुल गौशाला के लिए खल (पशु आहार) की सेवा करें।',
-    amount: '₹2,100',
+    title: 'एक गाय बछडे का प्रतिमाह चारा खर्च',
+    description: 'एक गाय या बछड़े के लिए प्रतिमाह चारे का खर्च उठाएं।',
+    amount: '₹1,100',
     image: img2,
   },
   {
-    title: 'एक दिन की गुड़ सेवा - Palmakul',
-    description: 'पल्माकुल गौशाला के लिए गुड़ की सेवा करें।',
-    amount: '₹1,100',
-    image: img3,
-  },
-  {
-    title: 'एक दिन की बासी रोटी सेवा - Palmakul',
-    description: 'पल्माकुल गौशाला के लिए बासी रोटी की सेवा करें।',
+    title: 'एक कट्टा हरी घांस एक महिने तक',
+    description: 'एक महीने तक हरी घास का सहयोग करें।',
     amount: '₹500',
-    image: img4,
+    image: img3,
   },
 ];
 

@@ -14,7 +14,7 @@ const Footer = () => {
 
   const socialLinks = [
     { name: 'Facebook', href: 'https://www.facebook.com/shivmandirgowshala/', icon: 'facebook' },
-    { name: 'Instagram', href: 'https://www.instagram.com/shiv_mandir_gowshala', icon: 'instagram' },
+    { name: 'Instagram', href: 'https://www.instagram.com/shiv_mandir_gaushala', icon: 'instagram' },
     { name: 'WhatsApp', href: 'https://whatsapp.com/channel/0029VavdHsMIt5s4Uv82DL2J', icon: 'whatsapp' },
     { name: 'YouTube', href: 'https://www.youtube.com/@shivmandirgowshala', icon: 'youtube' }
   ];

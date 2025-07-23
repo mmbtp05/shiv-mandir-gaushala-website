@@ -1,70 +1,61 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const products = [
+  {
+    title: '100% Pure Desi Cow Ghee – Shiv Mandir Gaushala',
+    image: 'https://shop.omshivmandirgaushala.org/cdn/shop/files/DSC06998.jpg?v=1753278646&width=823',
+    price: 'From Rs. 400.00',
+    link: 'https://shop.omshivmandirgaushala.org/products/100-pure-desi-gir-cow-ghee-shiv-mandir-gaushala',
+  },
+  {
+    title: 'Gaunyle – Natural Cow Dung Floor Cleaner (Shiv Mandir Gaushala)',
+    image: 'https://shop.omshivmandirgaushala.org/cdn/shop/files/DSC07042.jpg?v=1753280860&width=823',
+    price: 'From Rs. 90.00',
+    link: 'https://shop.omshivmandirgaushala.org/products/gaunyle-natural-cow-dung-floor-cleaner-shiv-mandir-gaushala',
+  },
+  {
+    title: 'Natural Cow Dung Dhoop Batti – Rose, Sandal, Mogra, Jasmine (Shiv Mandir Gaushala)',
+    image: 'https://shop.omshivmandirgaushala.org/cdn/shop/files/DSC07030.jpg?v=1753280187&width=823',
+    price: 'From Rs. 60.00',
+    link: 'https://shop.omshivmandirgaushala.org/products/natural-cow-dung-dhoop-batti-shiv-mandir-gaushala',
+  },
+  {
+    title: 'Pure Cow Dung Upli / Kanda – Shiv Mandir Gaushala',
+    image: 'https://shop.omshivmandirgaushala.org/cdn/shop/files/DSC07036.jpg?v=1753280594&width=823',
+    price: 'From Rs. 20.00',
+    link: 'https://shop.omshivmandirgaushala.org/products/pure-cow-dung-upli-kanda-shiv-mandir-gaushala',
+  },
+];
+
+const getVisibleCount = () => {
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+  }
+  return 1;
+};
 
 const ProductsCarousel = () => {
-  const products = [
-    {
-      name: 'A2 Cow Ghee',
-      description: 'Pure, traditional ghee made from desi cow milk. Rich in nutrients and perfect for healthy cooking and ayurvedic uses.',
-      image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308',
-      cta: 'Buy Now',
-    },
-    {
-      name: 'Cow Dung Cakes',
-      description: 'Eco-friendly fuel and havan material, made from pure cow dung. Ideal for rituals and organic farming.',
-      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
-      cta: 'Buy Now',
-    },
-    {
-      name: 'Panchgavya Soap',
-      description: 'Natural soap made from cow ghee, dung, and urine for healthy, glowing skin. 100% chemical-free.',
-      image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b',
-      cta: 'Buy Now',
-    },
-    {
-      name: 'Dhoop Sticks',
-      description: 'Handmade dhoop sticks from cow dung and herbs. Purifies the air and creates a spiritual atmosphere.',
-      image: 'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd',
-      cta: 'Buy Now',
-    },
-    {
-      name: 'Cow Urine Ark',
-      description: 'Distilled cow urine (ark) for ayurvedic and medicinal uses. Known for its detoxifying properties.',
-      image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
-      cta: 'Buy Now',
-    },
-  ];
-
-  const getVisibleCount = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1024) return 3;
-      if (window.innerWidth >= 640) return 2;
-    }
-    return 1;
-  };
-
   const [start, setStart] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(1); // Always start with 1 for SSR
+  const [visibleCount, setVisibleCount] = useState(1);
   const [isClient, setIsClient] = useState(false);
 
-  // Handle client-side mounting
   useEffect(() => {
     setIsClient(true);
     setVisibleCount(getVisibleCount());
   }, []);
 
-  // Responsive visible count
   useEffect(() => {
     if (!isClient) return;
-    
     const handleResize = () => setVisibleCount(getVisibleCount());
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [isClient]);
 
   const maxStart = Math.max(0, products.length - visibleCount);
-  
+
   const goLeft = () => {
     if (start === 0) {
       setStart(maxStart);
@@ -72,7 +63,7 @@ const ProductsCarousel = () => {
       setStart((prev) => prev - 1);
     }
   };
-  
+
   const goRight = () => {
     if (start === maxStart) {
       setStart(0);
@@ -82,11 +73,10 @@ const ProductsCarousel = () => {
   };
 
   return (
-    <section className="w-full bg-orange-50 py-20" id="products">
+    <section className="w-full bg-white py-16" id="products">
       <div className="w-4/5 lg:w-3/5 mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-orange-700">Our Products</h2>
         <div className="flex items-center justify-center gap-4 mb-6">
-          {/* Left Arrow */}
           <button
             onClick={goLeft}
             className="bg-orange-600 hover:bg-orange-700 text-white rounded-full p-2 shadow transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
@@ -95,7 +85,6 @@ const ProductsCarousel = () => {
           >
             <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" /></svg>
           </button>
-          {/* Carousel */}
           <div className="w-full overflow-hidden">
             <div
               className="flex transition-transform duration-500"
@@ -104,26 +93,31 @@ const ProductsCarousel = () => {
               {products.map((product, idx) => (
                 <div
                   key={idx}
-                  className="flex-shrink-0 px-2 py-6"
+                  className="flex-shrink-0 px-2"
                   style={{ width: `${100 / visibleCount}%` }}
                 >
-                  <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-8 h-full">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="rounded-xl shadow w-full object-cover max-h-48 border-4 border-orange-200 mb-4"
-                    />
-                    <h3 className="text-xl md:text-2xl font-bold text-orange-700 mb-2 text-center">{product.name}</h3>
-                    <p className="text-gray-700 mb-6 text-center">{product.description}</p>
-                    <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3 rounded-full shadow transition-colors duration-200">
-                      {product.cta}
-                    </button>
-                  </div>
+                  <a
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-full"
+                  >
+                    <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-6 h-full border border-gray-200 hover:shadow-xl transition-shadow duration-200">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="rounded-xl shadow w-full object-cover max-h-64 mb-4"
+                      />
+                      <div className="text-center">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.title}</h3>
+                        <div className="text-orange-700 font-bold text-base mb-1">{product.price}</div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
               ))}
             </div>
           </div>
-          {/* Right Arrow */}
           <button
             onClick={goRight}
             className="bg-orange-600 hover:bg-orange-700 text-white rounded-full p-2 shadow transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"

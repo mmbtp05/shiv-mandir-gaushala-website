@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import GaushalaNavbar from '@/app/(components)/GaushalaNavbar';
 import GaushalaFooter from '@/app/(components)/GaushalaFooter';
-import DonateCarousel from '@/app/(components)/DonateCarousel';
+import { VideoModalProvider } from '@/app/(components)/VideoModalContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <GaushalaNavbar />
-        {children}
-        <GaushalaFooter />
+        <VideoModalProvider>
+          <GaushalaNavbar />
+          {children}
+          <GaushalaFooter />
+        </VideoModalProvider>
       </body>
     </html>
   );
