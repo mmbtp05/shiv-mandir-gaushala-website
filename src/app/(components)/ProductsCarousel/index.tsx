@@ -97,9 +97,9 @@ const ProductsCarousel = () => {
                   style={{ width: `${100 / visibleCount}%` }}
                 >
                   <a
-                    href={product.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    // href={product.link}
+                    // target="_blank"
+                    // rel="noopener noreferrer"
                     className="block h-full"
                   >
                     <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-6 h-full border border-gray-200 hover:shadow-xl transition-shadow duration-200">
@@ -110,7 +110,7 @@ const ProductsCarousel = () => {
                       />
                       <div className="text-center">
                         <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.title}</h3>
-                        <div className="text-orange-700 font-bold text-base mb-1">{product.price}</div>
+                        {/* <div className="text-orange-700 font-bold text-base mb-1">{product.price}</div> */}
                       </div>
                     </div>
                   </a>
@@ -127,6 +127,10 @@ const ProductsCarousel = () => {
             <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
           </button>
         </div>
+
+        <p className="text-center text-gray-600 mt-4">
+          For purchase please contact us at <a href="tel:+919849379735" className="text-orange-600 hover:text-orange-700">+91 98493 79735</a> or <a href="tel:+919100353375" className="text-orange-600 hover:text-orange-700">+91 91003 53375</a>
+        </p>
       </div>
     </section>
   );

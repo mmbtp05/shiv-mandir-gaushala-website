@@ -11,7 +11,7 @@ const stats = [
     ),
   },
   {
-    label: 'Volunteers',
+    label: 'Gualas',
     value: '100+',
     icon: (
       <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75" /></svg>
