@@ -97,9 +97,9 @@ const ProductsCarousel = () => {
                   style={{ width: `${100 / visibleCount}%` }}
                 >
                   <a
-                    // href={product.link}
-                    // target="_blank"
-                    // rel="noopener noreferrer"
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block h-full"
                   >
                     <div className="flex flex-col items-center bg-white rounded-2xl shadow-lg p-6 h-full border border-gray-200 hover:shadow-xl transition-shadow duration-200">
@@ -110,7 +110,7 @@ const ProductsCarousel = () => {
                       />
                       <div className="text-center">
                         <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.title}</h3>
-                        {/* <div className="text-orange-700 font-bold text-base mb-1">{product.price}</div> */}
+                        <div className="text-orange-700 font-bold text-base mb-1">{product.price}</div>
                       </div>
                     </div>
                   </a>
